@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessories - PJ Online Store</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#12142A">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><span class="accent">PJ</span> Online Store</a>
+  <nav>
+    <a href="accessories.html">Accessories</a>
+    <a href="clothes-ladies.html">Ladies</a>
+    <a href="clothes-men.html">Men</a>
+    <a href="clothes-kids.html">Kids</a>
+    <a href="shoes.html">Shoes</a>
+    <a href="cart.html" class="cart-link">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>Accessories</h1>
+  <p>Bags, jewelry, belts & more</p>
+  <div class="view-toggle">
+    <button id="gridViewBtn" onclick="setView('grid')">Grid</button>
+    <button id="listViewBtn" onclick="setView('list')">List</button>
+  </div>
+</div>
+
+<div class="product-grid" id="productGrid"></div>
+
+<footer>&copy; 2026 PJ Online Store. Order via WhatsApp.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script>renderProducts('accessories');</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
+</body>
+</html>
